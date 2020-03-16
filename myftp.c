@@ -255,9 +255,8 @@ void *threadFun(void *arg){
 
     /* Free the SSL structure */
     SSL_free(ssl);
-
     /* Free the SSL_CTX structure */
-    SSL_CTX_free(ctx);
+    
 
     int threadIdx = threadParam.threadClientIdx;
     //printf("finish idx:%d\n", threadIdx);

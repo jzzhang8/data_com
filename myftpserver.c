@@ -85,7 +85,7 @@ int main(int argc, char ** argv){
                 "Private key does not match the certificate public key\n");
         exit(1);
     }
-    
+
 
     while(1){
         if((client_sd = accept(sd, (struct sockaddr *)&client_addr, &addr_len))<0){
@@ -109,6 +109,9 @@ int main(int argc, char ** argv){
         }
 
     }
+
+    SSL_CTX_free(ctx);
+    
     close(sd);
     return 0;
 }
